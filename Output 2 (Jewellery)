@@ -21,6 +21,10 @@ Please choose a category that you need
 
 Please log in your account.
 Username: ang
+Password: 123458
+Password wrong. Please login again.
+
+Username: ang
 Password: 123456
 Login successfully....
 
@@ -52,7 +56,7 @@ TOTAL: RM 1223
 1. Please enter your name: 
 Oliver Ang
 2. Please enter your NRIC: 
-012345-01-0123
+0123-01-012345
 3. Please enter your email: 
 oliver@hotmail.com
 5. Please enter your contact number: 
@@ -63,7 +67,7 @@ oliver@hotmail.com
 =========================PERSONAL DETAILS==========================================
 ===================================================================================
 Name 	       : Oliver Ang
-NRIC 	       : 012345-01-0123
+NRIC 	       : 0123-01-012345
 Email          : oliver@hotmail.com
 Contact number : 012-3456789
 Address        : 0123 Jalan Sri Putri 1 Taman Putri
@@ -79,3 +83,4 @@ Address        : 0123 Jalan Sri Putri 1 Taman Putri
       0           0           0    0           0   0       0 0 0   0          0            0         0 0 0 0 0 0 0   0 0 0 0 0 0 0
 
 !!!!!!!Thank you for your visit!!!!!!!
+
