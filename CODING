@@ -1,0 +1,1187 @@
+package groupProject;
+import java.util.Scanner;
+import java.util.Arrays;
+public class GroupProject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int menucontrol;
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Welcome to \"Beauty Empire\" Company");
+		System.out.println("\nMAIN MENU");
+		System.out.println("Please choose a category that you need");
+		System.out.println("[1] MAKE UP  (CHECK STOCK) *STAFF ONLY*");
+		System.out.println("[2] JEWELLERY (PURCHASE OF JEWELLERY) ");
+		System.out.println("[3] PERFUME (CATEGORY)");
+		System.out.println("[4] SKIN CARE (PURCHASE OF SKIN CARE PRODUCT)");
+		System.out.println("[5] HAIR (DONATION)");
+		menucontrol = scan.nextInt();
+		
+		if (menucontrol == 1) {
+			welcome();
+			System.out.println("\n*FOR STAFF ONLY*");
+			login();
+			int control = 0;
+			String [] colors1 = {"Neon Red", "Brick Red", "Toasted Almond", "Sweet Marsala", "Preppy Red"}; //LIPSTICK
+			String [] colors2 = {"Grayness Reducer - Brown", "Fresh Brightner - Pink", "Tone Up Perfector - Blue",
+									"Yellowness Neutralizer - Purple", "Dullness eraser - Yellow"}; //PRIMER
+			stockprocess(colors1, colors2);
+			quit();
+		}
+		else if (menucontrol == 2) {
+			String[] item = {"Ring: 2.1g", "Ear Ring: 1.56g", "Necklace: 4.57g", "Locket: 2.5g","Bracelet: 3.24g"};
+			welcome();
+			System.out.println("\n==WELCOME TO GOLD JEWELLERY EMPIRE==");
+			login();
+			showMessage();
+			budget(item);
+		}
+		else if (menucontrol == 3) {
+			welcome();
+			System.out.println("\n==WELCOME TO SUGARBOMB EMPIRE==");
+			login();
+			perfume();
+		}
+		else if (menucontrol == 4) {
+			welcome();
+			login();
+			double [] pricee  = {30,25,35,45,40,60};
+			skincare(pricee);
+		}
+		else if (menucontrol == 5) {
+			welcome();
+			login();
+			System.out.println("National Cancer Society Malaysia (NCSM) had organized a campaign recently");
+			System.out.println("");
+			
+			System.out.println("This campaign is to raise public awareness on the prevention, screening and early detection of cancer through education and raising funds for the patients.");
+			
+			System.out.println("MINI salon had organized this hair donation event to support the campaign organized by NCSM and to help patients that are suffering from cancer!"); 
+			System.out.println("");
+			
+			System.out.println("The public is welcome to take part in this event to show us your support!");
+			System.out.println("");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			
+			interest(0);
+		}
+		else {
+			System.out.println("Not available. Please try again....");
+		}
+	}
+
+	public static void welcome() {
+		System.out.println();
+		System.out.println(" O       O       O   O O O O O O O O   O                 O O O O O O O O   O O O O O O O O   O O O O O O O O   O O O O O O O O");
+		System.out.println("  O     O O     O    O                 O                 O                 O             O   O      O      O   O");
+		System.out.println("   O   O   O   O     O O O O O O O O   O                 O                 O             O   O      O      O   O O O O O O O O");
+		System.out.println("    O O     O O      O                 O                 O                 O             O   O      O      O   O");
+		System.out.println("     O       O       O O O O O O O O   O O O O O O O O   O O O O O O O O   O O O O O O O O   O      O      O   O O O O O O O O");
+		System.out.println("\n!!!!!!!WELCOME TO THE BEAUTY EMPIRE!!!!!!!");
+	}
+	
+	public static void login() {
+		Scanner scan = new Scanner (System.in);
+		String usernamein;
+		int passwordin, password = 123456;
+		System.out.println("\nPlease log in your account.");
+		
+		for (int time = 0; time >=0; time++) {
+			System.out.print("Username: ");
+			usernamein = scan.nextLine();
+			System.out.print("Password: ");
+			passwordin = scan.nextInt();
+			if (passwordin==password) {
+				System.out.println("Login successfully....");
+				break;
+			}
+			else
+				System.out.println("Password wrong. Please login again.");
+				System.out.println();
+				
+		}
+	}
+	
+	public static void customerdetails() {
+		Scanner scan = new Scanner (System.in);
+		System.out.println("\n*PLEASE ENTER YOUR DETAILS*");
+		System.out.println("1. Please enter your name: ");
+		String name = scan.nextLine();
+		
+		System.out.println("2. Please enter your NRIC: ");
+		String ic = scan.nextLine();
+		
+		System.out.println("3. Please enter your email: ");
+		String email = scan.nextLine();
+		
+		System.out.println("5. Please enter your contact number: ");
+		String num = scan.nextLine();
+		
+		System.out.println("6. Please enter your address: ");
+		String address = scan.nextLine();
+		
+		
+		System.out.println("===================================================================================");
+		System.out.println("=========================PERSONAL DETAILS==========================================");
+		System.out.println("===================================================================================");
+		System.out.println("Name 	       : "+ name);
+		System.out.println("NRIC 	       : "+ ic);
+		System.out.println("Email          : "+ email);
+		System.out.println("Contact number : "+ num);
+		System.out.println("Address        : "+ address);
+		System.out.println("===================================================================================");
+		System.out.println("===================================================================================");
+		
+	}
+	
+	public static void thank() {
+		System.out.println();
+		System.out.println("0 0 0 0 0 0 0 0   0           0        0 0 0       0 0 0       0   0          0      0           0   0 0 0 0 0 0 0   0           0");
+		System.out.println("      0           0           0       0     0      0    0      0   0      0 0          0       0     0           0   0           0");
+		System.out.println("      0           0 0 0 0 0 0 0      0 0 0 0 0     0     0     0   0 0 0                 0 0 0       0           0   0           0");
+		System.out.println("      0           0           0     0         0    0      0    0   0      0 0              0         0           0   0           0");
+		System.out.println("      0           0           0    0           0   0       0 0 0   0          0            0         0 0 0 0 0 0 0   0 0 0 0 0 0 0");
+		System.out.println("\n!!!!!!!Thank you for your visit!!!!!!!");
+	}
+	
+	public static int menu() {
+		Scanner scan = new Scanner (System.in);
+		String [] menu = new String [4];
+		menu[0] = "\n[1] ITEM";
+		menu[1] = "[2] GOOD RECEIVED NOTE";
+		menu[2] = "[3] PURCHASE RETURN";
+		menu[3] = "What do you want to do?";
+		
+		for (int i = 0; i < menu.length; i++) {
+			System.out.println(menu[i] + " ");
+		}
+		int control = scan.nextInt();
+		return control;
+	}
+	
+	public static void stockprocess(String [] colors1, String [] colors2) {
+		Scanner scan = new Scanner (System.in);
+		String usernamein, dn1, dn2, suppliercode1, suppliercode2, suppliername1, suppliername2, date1, date2, r1, r2, r3, r4;
+		int control, control2;
+		int barcode1, barcode2, barcode3, barcode4, barcode5, barcode6, barcode7, barcode8, barcode9;
+		int bq1 = 20, bq2 = 10, bq3 = 10, bq4 = 15, q1=0, q2=0, q3=0, q4=0, q5=0, q6=0, q7=0, q8 = 0;
+		control = menu();
+		if (control == 1) {
+			while (true) {
+			System.out.println("\n[ITEM]");
+			System.out.print("BARCODE:");
+			barcode1 = scan.nextInt();
+			
+			if (barcode1 == 20020200){
+				System.out.println("Item Name: Perfume Lipstick"); // barcode = 20020200
+				System.out.println("Category: Lipstick");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors1[0]);
+				System.out.println("UOM: PCS");
+				System.out.println("Unit Cost: RM36");
+				System.out.println("Unit Price: RM120");
+				System.out.println("Balance Quantity: " + bq1); //bq1
+			}
+			
+			else if (barcode1 == 20020210) {
+				System.out.println("Item Name: Perfume Lipstick"); // barcode = 20020210
+				System.out.println("Category: Lipstick");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors1[4]);
+				System.out.println("UOM: PCS");
+				System.out.println("Unit Cost: RM36");
+				System.out.println("Unit Price: RM120");
+				System.out.println("Balance Quantity: " + bq2); //bq1
+			}
+			
+			else if (barcode1 == 20010156) {
+				System.out.println("Item Name: Perfume Toner"); // barcode = 20010156
+				System.out.println("Category: Toner");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("UOM: BTL");
+				System.out.println("Unit Cost: RM18");
+				System.out.println("Unit Price: RM60");
+				System.out.println("Balance Quantity: " + bq3); //bq2
+			}
+			
+			else if (barcode1 == 20030232) {
+				System.out.println("Item Name: Perfume Primer"); // barcode = 20030232
+				System.out.println("Category: Primer");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors2[2]);
+				System.out.println("UOM: BTL");
+				System.out.println("Unit Cost: RM15");
+				System.out.println("Unit Price: RM60");
+				System.out.println("Balance Quantity: " + bq4); //bq3
+			}
+			System.out.println("\nDo you want to search another item information?");
+			System.out.println("[1] YES [2] NO");
+			control2 = scan.nextInt();
+			int a = 2;
+			if (control2==a){
+				break;
+			}
+			
+			}
+		}
+		
+		control=menu();
+		if (control == 2) {
+			System.out.println("\n[GOOD RECEIVED NOTE]");
+			System.out.print("Document Number: "); //dn
+			scan.nextLine();
+			dn1 = scan.nextLine();
+			System.out.print("Supplier Code: ");
+			suppliercode1 = scan.nextLine();
+			System.out.print("Supplier Name: ");
+			suppliername1 = scan.nextLine();
+			System.out.print("Date: ");
+			date1 = scan.nextLine();
+			
+			System.out.println("\nItem Barcode: ");
+			barcode2 = scan.nextInt(); // barcode = 20020200
+			System.out.print("Item Name: Perfume Lipstick (" + colors1[0] + ")"); 
+			System.out.print("\nQuantity: ");
+			q1 = scan.nextInt();
+			
+			System.out.println("\nItem Barcode: ");
+			barcode3 = scan.nextInt(); // barcode = 20020210
+			System.out.print("Item Name: Perfume Lipstick (" + colors1[4] + ")"); 
+			System.out.print("\nQuantity: ");
+			q2 = scan.nextInt();
+			
+			System.out.println("\nItem Barcode: ");
+			barcode4 = scan.nextInt(); // barcode = 20010156
+			System.out.print("Item Name: Perfume Toner");
+			System.out.print("\nQuantity: ");
+			q3 = scan.nextInt();
+			
+			System.out.println("\nItem Barcode: ");
+			barcode5 = scan.nextInt(); // barcode = 20030232
+			System.out.print("Item Name: Perfume Primer (" + colors2[2] + ")");
+			System.out.print("\nQuantity: ");
+			q4 = scan.nextInt();
+			
+			System.out.println("\nInformation has been saved. Here is your report.");
+			System.out.println("\nDocument Number: "+ dn1); //dn
+			System.out.println("Supplier Code: " + suppliercode1);
+			System.out.println("Supplier Name: " + suppliername1);
+			System.out.println("Date: " + date1);
+			System.out.println("Barcode:        Item Name:                \t\t  Quantity:    ");
+			System.out.println(barcode2 + "\tPerfume Lipstick (" + colors1[0] + ")\t\t  " + q1);
+			System.out.println(barcode2 + "\tPerfume Lipstick (" + colors1[4] + ")\t\t  " + q2);
+			System.out.println(barcode3 + "\tPerfume Toner   \t\t\t  " + q3);
+			System.out.println(barcode4 + "\tPerfume Primer (" + colors2[2] + ") " + q4);
+			
+		}
+		
+		control = menu();
+		if (control == 3) {
+			System.out.println("\n[PURCHASE RETURN]");
+			System.out.print("Document Number: "); //dn2
+			scan.nextLine();
+			dn2 = scan.nextLine();
+			System.out.print("Supplier Code: ");
+			suppliercode2 = scan.nextLine();
+			System.out.print("Supplier Name: ");
+			suppliername2 = scan.nextLine();
+			System.out.print("Date: ");
+			date2 = scan.nextLine();
+			
+			System.out.println("\nItem Barcode: "); // barcode = 20020200
+			barcode6 = scan.nextInt();
+			System.out.print("Item Name: Perfume Lipstick (" + colors1[0] + ")");
+			System.out.print("\nQuantity: ");
+			q5 = scan.nextInt();
+			System.out.print("Reason: ");
+			scan.nextLine();
+			r1 = scan.nextLine();
+			
+			System.out.println("\nItem Barcode: "); // barcode = 20020210
+			barcode7 = scan.nextInt();
+			System.out.print("Item Name: Perfume Lipstick (" + colors1[4] + ")");
+			System.out.print("\nQuantity: ");
+			q6 = scan.nextInt();
+			System.out.print("Reason: ");
+			scan.nextLine();
+			r2 = scan.nextLine();
+			
+			System.out.println("\nItem Barcode: "); // barcode = 20010156
+			barcode8 = scan.nextInt();
+			System.out.print("Item Name: Perfume Toner");
+			System.out.print("\nQuantity: ");
+			q7 = scan.nextInt();
+			System.out.print("Reason: ");
+			scan.nextLine();
+			r3 = scan.nextLine();
+			
+			
+			System.out.println("\nItem Barcode: "); // barcode = 20030232
+			barcode9 = scan.nextInt();
+			System.out.print("Item Name: Perfume Primer (" + colors2[2] + ")");
+			System.out.print("\nQuantity: ");
+			q8 = scan.nextInt();
+			System.out.print("Reason: ");
+			scan.nextLine();
+			r4 = scan.nextLine();
+			
+			System.out.println("\nInformation has been saved. Here is your report.");
+			System.out.println("\nDocument Number: "+ dn2); //dn
+			System.out.println("Supplier Code: " + suppliercode2);
+			System.out.println("Supplier Name: " + suppliername2);
+			System.out.println("Date: " + date2);
+			System.out.println("Barcode:        Item Name:                \t\t  Quantity:    ");
+			System.out.println(barcode6 + "\tPerfume Lipstick (" + colors1[0] + ")\t\t  " + q5 + "\n\t\tReason:"  + r1);
+			System.out.println("\n" + barcode7 + "\tPerfume Lipstick (" + colors1[4] + ")\t\t  " + q6 + "\n\t\tReason:" + r2);
+			System.out.println("\n" + barcode8 + "\tPerfume Toner   \t\t\t  " + q7 + "\n\t\tReason:" + r3);
+			System.out.println("\n" + barcode9 + "\tPerfume Primer (" + colors2[2] + ") " + q8 + "\n\t\tReason:" + r4);
+		}
+		
+		int CQ1 = bq1 + q1 - q5;
+		int CQ2 = bq2 + q2 - q6;
+		int CQ3 = bq3 + q3 - q7;
+		int CQ4 = bq4 + q4 - q8;
+		
+		control = menu();
+		if (control == 1) {
+			while(true) {
+		System.out.println("\n[ITEM]");
+		System.out.print("BARCODE:");
+		barcode8 = scan.nextInt();
+			if (barcode8 == 20020200){
+				System.out.println("Item Name: Perfume Lipstick"); // barcode = 20020200
+				System.out.println("Category: Lipstick");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors1[0]);
+				System.out.println("UOM: PCS");
+				System.out.println("Unit Cost: RM36");
+				System.out.println("Unit Price: RM120");
+				System.out.println("Balance Quantity: " + CQ1); //CQ1
+			}
+		
+			else if (barcode8 == 20020210) {
+				System.out.println("Item Name: Perfume Lipstick"); // barcode = 20020210
+				System.out.println("Category: Lipstick");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors1[4]);
+				System.out.println("UOM: PCS");
+				System.out.println("Unit Cost: RM36");
+				System.out.println("Unit Price: RM120");
+				System.out.println("Balance Quantity: " + CQ2); //CQ2
+			}
+		
+			else if (barcode8 == 20010156) {
+				System.out.println("Item Name: Perfume Toner"); // barcode = 20010156
+				System.out.println("Category: Toner");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("UOM: BTL");
+				System.out.println("Unit Cost: RM18");
+				System.out.println("Unit Price: RM60");
+				System.out.println("Balance Quantity: " + CQ3); //CQ3
+			}
+		
+			else if (barcode8 == 20030232) {
+				System.out.println("Item Name: Perfume Primer"); // barcode = 20030232
+				System.out.println("Category: Primer");
+				System.out.println("Supplier: Princess Production");
+				System.out.println("Colour: " + colors2[2]);
+				System.out.println("UOM: BTL");
+				System.out.println("Unit Cost: RM15");
+				System.out.println("Unit Price: RM60");
+				System.out.println("Balance Quantity: " + CQ4); //CQ4
+		}
+			
+			System.out.println("\nDo you want to search another item information?");
+			System.out.println("[1] YES [2] NO");
+			control2 = scan.nextInt();
+			int b = 2;
+			if (control2==b){
+				break;
+			}
+			}
+		}
+		
+	}
+	
+	public static void quit() {
+		int control3=0;
+		Scanner scan = new Scanner (System.in);
+		System.out.println("\nDo you want to quit the program?");
+		while (true) {
+			System.out.println("[1] YES [2] NO");
+			control3 = scan.nextInt();
+			int c = 1;
+			if (control3==c){
+				break;
+			}
+		}
+		thank();
+	}
+	
+	public static void showMessage() {
+		System.out.println("\nPlease choose your budget range and gram.");
+		System.out.println("Note: Less than 5g need to pay wage cost");
+		System.out.println("\n");
+	
+	}
+	public static void order() {
+		Scanner sc = new Scanner (System.in);
+
+		System.out.println("[1] Proceed Order or [2] Cancel Order");
+		int order = sc.nextInt();
+
+		while (order != 1 && order != 2) {
+			System.out.println("INVALID CODE");
+			System.out.println("Please enter confirmation code again");
+			order= sc.nextInt();
+		}
+
+		if (order ==1) {
+
+			customerdetails();
+			System.out.println("\n");
+
+			thank();
+	}
+
+	else if (order ==2) {
+		System.out.println("You have cancel your order");
+		thank();
+	}
+
+
+}
+	public static void budget(String [] item) {
+		Scanner scan = new Scanner(System.in);
+		
+		int total, total2, total3, total4, budget;
+		int gold = 240, wage = 250, delivery = 30, packaging = 15, insurance = 50;
+		double gram, ring = 2.1, earring = 1.56, necklace = 4.57, locket = 2.5, bracelet = 3.24;
+		
+		
+		System.out.println("Your budget range: ");
+		budget =scan.nextInt();
+
+		System.out.println("Your gram: ");
+		gram = scan.nextDouble();
+
+
+		if(gram < 5) {
+		String x = item[0];
+		String y = item[1];
+		System.out.println(x);
+		System.out.println(y);
+			total = (int)((gold * ring) + (gold * earring));
+		System.out.println();
+		System.out.println("Total gold price: RM" + total);
+		System.out.println();
+		System.out.println("Wage:RM250\n" + "Delivery:RM30\n" + "Packaging:RM15\n" + "Insurance:RM50");
+			total2 = (total + wage + delivery + packaging + insurance);
+		System.out.println("--------------------");
+		System.out.println("TOTAL: RM " + total2);
+		System.out.println("--------------------");
+
+		System.out.println();
+		order();
+		}
+
+		if(gram >= 5) {
+		String a = item[1];
+		String b = item[2];
+		String c = item[3];
+		String d = item[4];
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+			total3 =(int)((gold * earring) + (gold * necklace) + (gold * locket) +(gold * bracelet));
+		System.out.println();
+		System.out.println("Total gold price: RM" + total3);
+		System.out.println();
+		System.out.println( "Delivery:RM30\n" + "Packaging:RM15\n" + "Insurance:RM50");
+			total4 = (total3 + delivery + packaging + insurance);
+		System.out.println("--------------------");
+		System.out.println("TOTAL: RM " + total4);
+		System.out.println("--------------------");
+
+		System.out.println();
+		order();
+			}
+	}
+	
+	public static void perfume() {
+		Scanner input = new Scanner (System.in);
+		System.out.println("--------------------------------------------------------");
+		System.out.println("                    SUGARBOMB EMPIRE                    ");
+		System.out.println("--------------------------------------------------------");
+		System.out.println("          CATEGORY                     ACCOUNT          ");  
+		System.out.println("--------------------------------------------------------");
+		
+		System.out.print("Which one do you want to see (enter 1 to see category) : ");
+		int choose = input.nextInt();
+		System.out.println();
+	    
+		System.out.println();
+		System.out.println("Here are all the category of perfume in our shop: ");
+		System.out.println();
+		System.out.println("WOMEN EDP 30 ML");
+		System.out.println("WOMEN EDT 10 ML");
+		System.out.println("MEN EDP 30 ML");
+		System.out.println("MEN EDT 10 ML");
+		System.out.println("PARFUM");
+		System.out.println("SCARLET EDITION");
+		System.out.println("FRUITIES SERIES");
+		System.out.println();
+        
+		showMessage2();
+	}
+	
+	public static void showMessage2() {
+		Scanner input = new Scanner(System.in);
+		
+		String perfumeName,category;
+		int totalperfume = 0;
+		double price = 0 ;
+		double pay = 0; 
+		int quantity = 0;
+		int i = 0;
+		int count = 0;
+		double change = 0;
+		double totalprice = 0;
+		char code = 0;
+		
+		String WomenEDP [] = {"Floral Blush", "Floral Immortal", "Fruity Rose", "Fruity Selena", "Fruity Sparkle",
+	              "Sweet Bombshell", "Sweet Coach", "Sweet Fantasy", "Vanillavie", "Vanilla Poison"};
+		
+		String WomenEDT [] = {"Floral Blush", "Floral Immortal", "Fruity Rose", "Fruity Selena", "Fruity Sparkle",
+              "Sweet Bombshell", "Sweet Coach", "Sweet Fantasy", "Vanillavie", "Vanilla Poison"};
+		
+		String MenEDP [] = {"Aromantic Adventurous", "Aromatic Eros", "Citrus Code", "Citrus Desire", 
+	            "Citrus Di Gio", "Fruity Aventus", "Spicy Million", "Spicy Royalty", "Spicy XS"};
+		
+		String MenEDT [] = {"Aromantic Adventurous", "Aromatic Eros", "Citrus Code", "Citrus Desire", 
+            "Citrus Di Gio", "Fruity Aventus", "Spicy Million", "Spicy Royalty", "Spicy XS"};
+		
+		String Parfum [] = {"Intense", "Blast", "Julia", "Isabelle", "Elisa", "Roselle", "Layla"};
+		
+		String ScarletEdition [] = {"Sakura", "Vaila", "Julia", "Rare"};
+		
+		String FruitiesSeries [] = {"Mango Swirl", "Baby Dew", "Melon Moonlight", "Apple Smoothie", "Strawberry Crush"};
+		
+		System.out.print("Enter the category that you want to see : ");
+		category = input.next();
+		input.nextLine();
+		System.out.println();
+		
+		switch (category) {
+		case "womenedp":
+		case "WOMENEDP":
+			System.out.println("WOMEN EDP | PRICE (RM 45.00)");
+			System.out.println();
+			for (i = 0; i <WomenEDP.length; i++) {
+			System.out.println(WomenEDP[i]); 
+			}
+		break;
+				
+		case "womenedt":
+		case "WOMENEDT":
+			System.out.println("WOMEN EDT | PRICE (RM 10.00)");
+			System.out.println();
+			for (i = 0; i <WomenEDT.length; i++) {
+				System.out.println(WomenEDT[i]);
+			}
+	    break; 
+		    	
+	    case "menedp":
+	    case "MENEDP":
+		    System.out.println("MEN EDP | PRICE (RM 45.00)");
+		    System.out.println();
+		    for (i = 0; i <MenEDP.length; i++) {
+				System.out.println(MenEDP[i]);
+		    }
+	    break; 
+	   
+	    case "menedt":
+	    case "MENEDT":
+		    System.out.println("MEN EDT | PRICE (RM 10.00)");
+		    System.out.println();
+		    for (i = 0; i <MenEDT.length; i++) {
+				System.out.println(MenEDT[i]);
+		    }
+	    break; 
+				
+			
+	    case "parfum":
+	    case "PARFUM":
+			System.out.println("PARFUM | PRICE (RM 49.00)");
+			System.out.println();
+			for (i = 0; i <Parfum.length; i++) {
+				System.out.println(Parfum[i]);
+			}
+	    break;
+		 
+	    case "scarletedition":
+	    case "SCARLETEDITION":
+			System.out.println("SCARLET EDITION | PRICE (RM 45.00)");
+			System.out.println();
+			for (i = 0; i <ScarletEdition.length; i++) {
+				System.out.println(ScarletEdition[i]);
+			}
+	    break;
+		
+	    case "fruitiesseries":
+	    case "FRUITIESSERIES":
+			System.out.println("FRUITIES SERIES  |  PRICE (RM 29.00)"); 
+			System.out.println();
+			for (i = 0; i <FruitiesSeries.length; i++) {
+				System.out.println(FruitiesSeries[i]);
+			}
+	    break;  
+	    }
+ 
+        System.out.println();
+        
+        System.out.print("How many perfume that you want : ");
+        totalperfume = input.nextInt();
+        System.out.println();
+	        
+	        if (totalperfume <= 1) {
+	        	System.out.print("Choose your perfume : ");
+				perfumeName = input.next();
+				System.out.println();
+		        
+				System.out.print("How many quantity that you want : ");
+		        quantity = input.nextInt();
+		        System.out.println();
+		        
+		        System.out.println("Add to cart : " +perfumeName);
+		        System.out.println();
+	       
+		        System.out.print("Enter the price :                           RM ");
+		        price = input.nextDouble();
+		        System.out.println();
+		        
+		        totalprice = (price * quantity);
+		       		        
+		        calculate1 (price, quantity, totalprice);
+				
+				System.out.print("Pay the perfume :                           RM ");
+				pay = input.nextDouble();
+				
+				calculate2 (pay, totalprice, change);
+				System.out.println();
+			    
+				showMessage3(); 
+			}
+	        
+	        else if (totalperfume > 1) {
+	        	
+	        	
+	        		do {
+	        		System.out.print("Choose your perfume : ");
+					perfumeName = input.next();
+					input.nextLine();
+					System.out.println();
+					
+					System.out.print("How many quantity that you want for this perfume: ");
+			        quantity = input.nextInt();
+			        System.out.println();
+			        
+			        System.out.println("Add to cart : " +perfumeName);
+			        System.out.println();
+			        
+			        System.out.print("Enter the price :                         RM ");
+	 			    price = input.nextDouble();
+	 			    
+			        totalprice = (price * quantity);
+			        totalprice += price;
+		 	        count++;
+	 			    System.out.println();
+	 			    
+			        System.out.print("Do you want to choose another perfume? [Y/N] = ");
+			        code = input.next().charAt(0);
+					System.out.println();
+					
+		            }while (code == 'y' || code == 'Y');
+                    
+					if (code == 'n' || code == 'N') {
+		 
+				    calculate1 (price, quantity, totalprice);
+
+				    System.out.println();
+
+					System.out.print("Pay the perfume :                         RM ");
+					pay = input.nextDouble();
+					
+					calculate2 (pay, totalprice, change);
+				    System.out.println();
+
+				    showMessage3();
+					}
+	        }
+		}
+		
+
+	public static void calculate1(double price, int quantity, double totalprice ) {
+		// TODO Auto-generated method stub
+
+        System.out.println("Total Price                               RM " + totalprice);
+		System.out.println();
+        
+	}
+
+	public static void calculate2(double pay, double totalprice, double change) {
+		// TODO Auto-generated method stub
+		
+		change = (pay - totalprice);
+		
+		System.out.println();
+		System.out.println("Your change                               RM " + change);
+	}
+	
+	public static void showMessage3() {
+		// TODO Auto-generated method stub
+		
+		System.out.println("YOU HAVE MADE THE PAYMENT FOR THIS PERFUME. \nBefore leave,");
+		customerdetails();
+		thank();
+		
+	}
+	
+	public static void skincare(double [] pricee) {
+		Scanner sc = new Scanner (System.in);
+		double price_charge = 20;
+		double amount, a2, a3, a4, a5, a6, a7, a8;
+		double price, p1, p2, p3, p4, p5, p6, p7, p8;
+		double finalprice, finalprice2; 
+		double total,t1, t2, t3, t4, t5, t6, t7, t8;
+		double size1, size2, size3, size4;
+		char pricelist, ans;
+		
+		
+		System.out.println("\n_____________________________Welcome to The Ordinary website, this is Beauty Empire!_____________________________");
+		System.out.println();
+
+		customerdetails();
+		System.out.println();
+		System.out.println("*********************************************************************************************");
+		System.out.println("*             Welcome to The Ordinary House of Beauty, this is Beauty Empire!               *");
+		System.out.println("*___________________________________________________________________________________________*");
+		System.out.println("*                                                                                           *");
+		System.out.println("*Dear customer, before you proceed,                                                         *");
+		System.out.println("*We would like to inform that                                                               *");
+		System.out.println("*You can't buy more than 1 serum to experience free shipping!                               *");
+		System.out.println("*And you can add only two ingredient into your Serum.                                       *");
+		System.out.println("*You will be charge RM20 if you add more than two ingredients into you Serum                *");
+		System.out.println("*********************************************************************************************");
+		System.out.println();
+		System.out.print("Would You like to see the pricelist? [Y/N] :  ");
+		System.out.println();
+		pricelist= sc.next().charAt(0);
+
+	switch (pricelist) {
+	case 'N' :
+	case 'n' :
+		System.out.println("\nOppss! You have cancel your order and return to homepage!"); 
+		System.out.println("\nSee You next time!"); 
+		thank();
+		break;
+
+	case 'Y' : 
+	case 'y' :
+	
+		System.out.println("\nWhat a great Choice! Here is the ingredient!");
+		System.out.println();
+	
+		priceList();
+	
+	
+		System.out.println("\nHere is the ingredients that you can add into your Serum ");
+		System.out.println("\nHappy Shopping!");
+		System.out.println();
+
+
+		System.out.println("\nNow please select your order size ");
+		System.out.println("\nYou can choose between 30ml or 60ml");
+		System.out.print("\nSize : "); 
+		System.out.println(); 
+		size1 = sc.nextDouble();
+
+		while (size1 != 30 && size1 != 60) {
+			System.out.println("Sorry! The chosen size is unavailable");
+			System.out.print("Please select your order size : ");
+			size1 = sc.nextDouble();
+		}
+
+		if(size1 == 30) {		
+			System.out.println("\nGreat! You can choose 30ml as your size of Serum's bottle");
+			System.out.println("\nNow choose your ingredient");
+			System.out.println(); 
+			System.out.print("\nEnter first ingredient : ");
+			String ingredient1 = sc.next();
+			System.out.print("\nEnter the quantity of " + ingredient1 + " : " );
+			amount = sc.nextDouble();
+			total = (amount*pricee[0]);
+
+			System.out.print("\nEnter second ingredient : ");
+			String ingredient2 = sc.next();
+			System.out.print("\nEnter the quantity of " + ingredient2 + " : " );
+			a2 = sc.nextDouble();
+			t1 = (a2*pricee[1]);
+
+			System.out.print("\nDo you want to add third ingredient? [Y/N]: ");
+			ans = sc.next().charAt(0);
+			switch (ans) {
+			case 'Y' :
+			case 'y' :
+				System.out.printf("\nEnter third ingredient : ");
+				String ingredient3 = sc.next();
+				System.out.print("\nEnter the quantity of " + ingredient3 + " : " );
+				a3 = sc.nextDouble();
+				t3 = (a3*pricee[2]);
+				System.out.println();
+				System.out.println("_______________________________________________________________________________________________");
+				System.out.println();
+				System.out.print("                             Your price for your Custom Serum is RM" + (total + t1 + t3 + price_charge));
+				System.out.println();
+				System.out.println("________________________________________________________________________________________________");
+				System.out.println();
+				System.out.println();
+				System.out.print("\nYou cant buy more than 1 serum, Continue with your payment. ");
+				System.out.print("\nEnter your payment Method :  ");
+				String payment = sc.next();
+				System.out.println("\nDelivery : Free Delivery ");
+				System.out.println();
+				System.out.println();
+		
+				greetings();
+					break;
+		
+			case 'N' :
+			case 'n' :
+				System.out.println("________________________________________________________________________________________________");
+				System.out.println();  
+				System.out.print("                        Your price for your Custom Serum is RM" + (total + t1 ));
+				System.out.println(); 
+				System.out.println("_______________________________________________________________________________________________");
+				System.out.println();
+				System.out.println();
+				System.out.print("\nYou cant buy more than 1 serum, Continue with your payment. ");
+				System.out.print("\nEnter your payment Method :  ");
+				String payment2 = sc.next();
+				System.out.println("\nDelivery : Free Delivery ");
+				System.out.println();
+				System.out.println();
+		
+				greetings();
+				break;
+			}
+		}
+ 
+		else if (size1 ==60) {
+			System.out.println("\nGreat! You can choose 60ml as your size of Serum's bottle");
+			System.out.println("\nNow choose your ingredient");
+			System.out.print("\nEnter first ingredient : ");
+			String ingredient4 = sc.next();
+			System.out.print("\nEnter the quantity of " + ingredient4 + " : " );
+			a4 = sc.nextDouble();
+			t4 = (a4*pricee[5]);
+
+			System.out.print("\nEnter second ingredient : ");
+			String ingredient5 = sc.next();
+			System.out.print("\nEnter the quantity of " + ingredient5 + " : " );
+			a5 = sc.nextDouble();
+			t5 = ((a5*pricee[5]));
+
+			System.out.print("\nDo you want to add third ingredient? [Y/N]: ");
+			ans = sc.next().charAt(0);
+			switch (ans) {
+			case 'Y' :
+			case 'y' :
+				System.out.printf("\nEnter third ingredient : ");
+				String ingredient6 = sc.next();
+				System.out.print("\nEnter the quantity of " + ingredient6 + " : " );
+				a6 = sc.nextDouble();
+				t6 = ((a6*pricee[3]));
+				System.out.println();
+				System.out.println("_______________________________________________________________________________________________");
+				System.out.println();
+				System.out.print("                    Your  price for your Custom Serum is RM" + (t4 + t5 + t6 + price_charge ));
+				System.out.println();
+				System.out.println("_______________________________________________________________________________________________"); 
+				System.out.println();
+				System.out.println();
+				System.out.print("\nYou cant buy more than 1 serum, Continue with your payment. ");
+				System.out.print("\nEnter your payment Method :  ");
+				String payment = sc.next();
+				System.out.println("\nDelivery : Free Delivery ");
+				System.out.println();
+				System.out.println();
+			
+				greetings();
+			
+				break;
+			
+			case 'N' :
+			case 'n' :
+				System.out.println("_______________________________________________________________________________________________");
+				System.out.println();  
+				System.out.print("                        Your  price for your Custom Serum is RM" + (t4 + t5));
+				System.out.println(); 
+				System.out.println("_______________________________________________________________________________________________");
+				System.out.println();
+				System.out.println();
+				System.out.print("\nYou cant buy more than 1 serum, Continue with your payment. ");
+				System.out.print("\nEnter your payment Method :  ");
+				String payment1 = sc.next();
+				System.out.println("\nDelivery : Free Delivery ");
+				System.out.println();
+				System.out.println();
+			
+				greetings();
+			
+				break;
+}	   
+}
+}
+
+	}
+	
+	public static void greetings() {
+		System.out.println("    ************************************************************************************");
+		System.out.println("    *                                                                                  *");
+		System.out.println("    *          We will send the receipt and the tracking number via email!             *");
+		System.out.println("    *                You will get your order after 14days of working                   *");
+		System.out.println("    *                                                                                  *");
+		System.out.println("    ************************************************************************************");
+		
+		thank();
+
+		
+	}
+
+
+	public static void priceList() {
+		System.out.println("\n                    Price-List for 30ml Serum :");
+		System.out.println();
+		System.out.println("            ********************************************************************");
+		System.out.println("            *                                                                  *");
+		System.out.println("            *            INGREDIENTS           QUANTITY       PRICE            *");
+		System.out.println("            *__________________________________________________________________*");
+		System.out.println("            *                                                                  *");
+		System.out.println("            *          Niancinamide 10%           1             30             *");
+		System.out.println("            *          Zinc 1%                    1             25             *");
+		System.out.println("            *          Alpha Arbutin 2%           1             45             *");
+		System.out.println("            *          Beta Hydroxy 2%            1             35             *");
+		System.out.println("            *          Hyalucronic Acid 2%        1             30             *");
+		System.out.println("            *          Alpha Hydroxy Acid 30%     1             35             *");
+		System.out.println("            *                                                                  *");
+		System.out.println("            ********************************************************************");
+		System.out.println();
+		System.out.println();
+		System.out.println("\n                             Price-List for 60ml Serum :");
+		System.out.println();
+		System.out.println("            ********************************************************************");
+		System.out.println("            *                                                                  *");
+		System.out.println("            *            INGREDIENTS           QUANTITY       PRICE            *");
+		System.out.println("            *__________________________________________________________________*");
+		System.out.println("            *                                                                  *");
+		System.out.println("            *          Niancinamide 14%           1             45             *");
+		System.out.println("            *          Zinc 5%                    1             40             *");
+		System.out.println("            *          Alpha Arbutin 6%           1             60             *");
+		System.out.println("            *          Beta Hydroxy 6%            1             60             *");
+		System.out.println("            *          Hyalucronic Acid 6%        1             45             *");
+		System.out.println("            *          Alpha Hydroxy Acid 34%     1             60             *");
+		System.out.println("            *                                                                  *");
+		System.out.println("            ********************************************************************");
+		System.out.println(); 
+		
+	}
+	
+	public static void interest(int join) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("If you are interested to join our event, please enter 1" );
+		System.out.println("If you are not interested, please enter 2.");
+		System.out.println("Are you interested to join?");
+		join = sc.nextInt();
+		
+		if(join == 1) {
+			inputDetails();
+			payment();
+			seatAllocation();
+			calculation(37,25,11);
+
+		}
+		else {
+			thank();
+			System.out.println("Thanks for your concern, hope to see you again next time!");
+		}
+		
+	}
+	
+	public static void inputDetails() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("");
+		System.out.println("Thanks for your participation!");
+		System.out.println("");
+		System.out.println("You have to fill in your details for the registration purpose in this event.");
+		System.out.println("");
+		
+		customerdetails();
+		
+		System.out.println("Please enter your age: ");
+		int age = sc.nextInt();
+		
+		System.out.println("Please enter your gender: ");
+		String gender = sc.next();
+
+		System.out.println("=========================================================================");
+		System.out.println("=========================================================================");
+		System.out.println("Age            : "+ age);
+		System.out.println("Gender 	       : "+ gender);
+		System.out.println("=========================================================================");
+		System.out.println("=========================================================================");
+		
+		fees(age,gender);
+		
+	}
+	
+	public static void fees(int age, String gender) {
+		System.out.println("");
+		System.out.println("For your information, ");
+	    System.out.println("We will collect an amount of fees from participant according to their category in order to raise fund for the patient in need.");
+		System.out.println("For each participant, the event organizer, MINI salon will donate extra RM 5 to NCSM to support their campaign.");
+		System.out.println("");
+		
+		if(gender.equals("female"))
+		{
+			if (age <= 12) 
+			{
+				System.out.println("Hi, Girl. Your fee is RM 5.");
+			}
+			else
+			{
+				System.out.println("Hi, Miss/Mrs. Your fee is RM 10.");
+			}
+		}
+		else 
+		{
+			if (age <= 12) 
+			{
+				System.out.println("Hi, Boy. Your fee is RM 5.");
+			}
+			else
+			{
+				System.out.println("Hi, Mr. Your fee is RM 7.");
+			}
+		}
+			
+	}
+	
+	public static void payment() {
+		Scanner sc =new Scanner(System.in);
+	
+		System.out.println("Please select your payment method: ");
+		System.out.println("1 - cash payment ");
+		System.out.println("2 - online transfer payment");
+		int pay = sc.nextInt();
+		
+		if(pay == 1)
+		{
+			System.out.println("You have selected the cash payment method!");
+			System.out.println("Please move to the cashier counter that is beside the entrance to complete your payment.");
+			thank();
+		}
+		else
+		{
+			System.out.println("You have selected the online transfer payment method!");
+			System.out.println("");
+			System.out.println("The details of the receiver bank account are as below: ");
+			System.out.println("");
+			System.out.println("		     Maybank						   ");
+			System.out.println("                    MINI salon                         ");
+			System.out.println("                   173678460739                        ");
+			System.out.println("  Please type on the reference with \"Hair Donation\"  ");
+			thank();
+		}
+	}
+	
+	public static void seatAllocation() {
+		System.out.println("");
+		System.out.println("**********************************************************************************************************************************************");
+		System.out.println("**************************************************************SEAT ALLOCATION*****************************************************************");
+		System.out.println("**********************************************************************************************************************************************");
+		
+		for(int i=8; i>=0; i--) 
+		{
+			
+			if(i<=8 && i>0) {
+				System.out.println("Your seat is available!");
+				System.out.println("Please move to seat "+i);
+				System.out.println("");
+			}
+			else
+				System.out.println("Sorry to inform you that the seats are currently full, please be patient and wait for a while!"+"\nThanks for your understanding and sorry for the inconvenience caused!");
+			
+		}
+	}
+	
+	public static void calculation(int a, int b, int c) { //a=female,b=male,c=kids
+		Scanner sc=new Scanner (System.in);
+		double a1 = a * 10;
+		double b1 = b * 7;
+		double c1 = c * 5;
+		int d = a + b + c;
+		double d1 = d * 5;
+		double sum = a1+ b1 + c1 + d1;
+		double cash,online;
+		System.out.println("");
+		System.out.println("**********************************************************************************************************************************************");
+		System.out.println("**************************************************************CALCULATION*********************************************************************");
+		System.out.println("**********************************************************************************************************************************************");
+		System.out.println("The number of participant are: ");
+		System.out.println("Female participants - " + a);
+		System.out.println("Male participants - " + b);
+		System.out.println("Kids participants - " + c);
+		System.out.println("-----------------------------------------------");
+		System.out.println("Total : " + d + " participants");
+		System.out.println("");
+		
+		double[]feesCollected = new double[] {a1,b1,c1};
+		String[]category = new String[] {"Female","Male","Kids"};
+		
+		System.out.println("The amount of fees collected from each category : ");
+		for(int i=0; i<feesCollected.length; i++) {
+			System.out.println(category[i] + " : "+"RM " + feesCollected[i]);
+			}
+			
+		System.out.println("");
+		System.out.println("The extra donations from MINI salon is RM " + d1);
+		System.out.println("In total, the fees that pass to NCSM is RM " + sum);
+		System.out.println("");
+		
+		System.out.println("Please enter the amount of cash payment received: ");
+		cash = sc.nextDouble();
+		System.out.println("Please enter the amount of online payment received: ");
+		online = sc.nextDouble();
+		
+		System.out.println("From the total amount of fees collected, ");
+		System.out.println("the cash payment collected is RM " + cash);
+		System.out.println("while the online payment collected is RM " + online);
+		System.out.println("");
+		
+		Arrays.sort(feesCollected);
+		System.out.println("The largest amount of fees collected is : ");
+		System.out.println("Female participants = RM " +feesCollected[feesCollected.length-1]);
+		
+		System.out.println("The smallest amount of fees collected is : ");
+		System.out.println("Kids participants = RM" +feesCollected[0]);
+		
+		System.out.println("");
+		System.out.println("**********************************************************************************************************************************************");
+		System.out.println("******************************************************************END*************************************************************************");
+		System.out.println("**********************************************************************************************************************************************");
+	
+	}
+}
