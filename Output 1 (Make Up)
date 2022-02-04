@@ -1,0 +1,270 @@
+Welcome to "Beauty Empire" Company
+
+MAIN MENU
+Please choose a category that you need
+[1] MAKE UP  (CHECK STOCK) *STAFF ONLY*
+[2] JEWELLERY (PURCHASE OF JEWELLERY) 
+[3] PERFUME (CATEGORY)
+[4] SKIN CARE (PURCHASE OF SKIN CARE PRODUCT)
+[5] HAIR (DONATION)
+1
+
+ O       O       O   O O O O O O O O   O                 O O O O O O O O   O O O O O O O O   O O O O O O O O   O O O O O O O O
+  O     O O     O    O                 O                 O                 O             O   O      O      O   O
+   O   O   O   O     O O O O O O O O   O                 O                 O             O   O      O      O   O O O O O O O O
+    O O     O O      O                 O                 O                 O             O   O      O      O   O
+     O       O       O O O O O O O O   O O O O O O O O   O O O O O O O O   O O O O O O O O   O      O      O   O O O O O O O O
+
+!!!!!!!WELCOME TO THE BEAUTY EMPIRE!!!!!!!
+
+*FOR STAFF ONLY*
+
+Please log in your account.
+Username: ANG
+Password: 123458
+Password wrong. Please login again.
+
+Username: ANG
+Password: 123456
+Login successfully....
+
+[1] ITEM 
+[2] GOOD RECEIVED NOTE 
+[3] PURCHASE RETURN 
+What do you want to do? 
+1
+
+[ITEM]
+BARCODE:20020200
+Item Name: Perfume Lipstick
+Category: Lipstick
+Supplier: Princess Production
+Colour: Neon Red
+UOM: PCS
+Unit Cost: RM36
+Unit Price: RM120
+Balance Quantity: 20
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20020210
+Item Name: Perfume Lipstick
+Category: Lipstick
+Supplier: Princess Production
+Colour: Preppy Red
+UOM: PCS
+Unit Cost: RM36
+Unit Price: RM120
+Balance Quantity: 10
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20010156
+Item Name: Perfume Toner
+Category: Toner
+Supplier: Princess Production
+UOM: BTL
+Unit Cost: RM18
+Unit Price: RM60
+Balance Quantity: 10
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20030232
+Item Name: Perfume Primer
+Category: Primer
+Supplier: Princess Production
+Colour: Tone Up Perfector - Blue
+UOM: BTL
+Unit Cost: RM15
+Unit Price: RM60
+Balance Quantity: 15
+
+Do you want to search another item information?
+[1] YES [2] NO
+2
+
+[1] ITEM 
+[2] GOOD RECEIVED NOTE 
+[3] PURCHASE RETURN 
+What do you want to do? 
+2
+
+[GOOD RECEIVED NOTE]
+Document Number: DO100124
+Supplier Code: PP5566
+Supplier Name: Princess Production
+Date: 26/01/2022
+
+Item Barcode: 
+20020200
+Item Name: Perfume Lipstick (Neon Red)
+Quantity: 50
+
+Item Barcode: 
+20020210
+Item Name: Perfume Lipstick (Preppy Red)
+Quantity: 50
+
+Item Barcode: 
+20010156
+Item Name: Perfume Toner
+Quantity: 80
+
+Item Barcode: 
+20030232
+Item Name: Perfume Primer (Tone Up Perfector - Blue)
+Quantity: 70
+
+Information has been saved. Here is your report.
+
+Document Number: DO100124
+Supplier Code: PP5566
+Supplier Name: Princess Production
+Date: 26/01/2022
+Barcode:        Item Name:                		  Quantity:    
+20020200	Perfume Lipstick (Neon Red)		  50
+20020200	Perfume Lipstick (Preppy Red)		  50
+20020210	Perfume Toner   			  80
+20010156	Perfume Primer (Tone Up Perfector - Blue) 70
+
+[1] ITEM 
+[2] GOOD RECEIVED NOTE 
+[3] PURCHASE RETURN 
+What do you want to do? 
+3
+
+[PURCHASE RETURN]
+Document Number: PR100056
+Supplier Code: PP5566
+Supplier Name: Princess Production
+Date: 26/01/2022
+
+Item Barcode: 
+20020200
+Item Name: Perfume Lipstick (Neon Red)
+Quantity: 10
+Reason: Damaged Packaging
+
+Item Barcode: 
+20020210
+Item Name: Perfume Lipstick (Preppy Red)
+Quantity: 6
+Reason: Damaged Packaging
+
+Item Barcode: 
+20010156
+Item Name: Perfume Toner
+Quantity: 8
+Reason: Broken Bottle
+
+Item Barcode: 
+20030232
+Item Name: Perfume Primer (Tone Up Perfector - Blue)
+Quantity: 9
+Reason: Damaged Packaging
+
+Information has been saved. Here is your report.
+
+Document Number: PR100056
+Supplier Code: PP5566
+Supplier Name: Princess Production
+Date: 26/01/2022
+Barcode:        Item Name:                		  Quantity:    
+20020200	Perfume Lipstick (Neon Red)		  10
+		Reason:Damaged Packaging
+
+20020210	Perfume Lipstick (Preppy Red)		  6
+		Reason:Damaged Packaging
+
+20010156	Perfume Toner   			  8
+		Reason:Broken Bottle
+
+20030232	Perfume Primer (Tone Up Perfector - Blue) 9
+		Reason:Damaged Packaging
+
+[1] ITEM 
+[2] GOOD RECEIVED NOTE 
+[3] PURCHASE RETURN 
+What do you want to do? 
+1
+
+[ITEM]
+BARCODE:20020200
+Item Name: Perfume Lipstick
+Category: Lipstick
+Supplier: Princess Production
+Colour: Neon Red
+UOM: PCS
+Unit Cost: RM36
+Unit Price: RM120
+Balance Quantity: 60
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20020210
+Item Name: Perfume Lipstick
+Category: Lipstick
+Supplier: Princess Production
+Colour: Preppy Red
+UOM: PCS
+Unit Cost: RM36
+Unit Price: RM120
+Balance Quantity: 54
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20010156
+Item Name: Perfume Toner
+Category: Toner
+Supplier: Princess Production
+UOM: BTL
+Unit Cost: RM18
+Unit Price: RM60
+Balance Quantity: 82
+
+Do you want to search another item information?
+[1] YES [2] NO
+1
+
+[ITEM]
+BARCODE:20030232
+Item Name: Perfume Primer
+Category: Primer
+Supplier: Princess Production
+Colour: Tone Up Perfector - Blue
+UOM: BTL
+Unit Cost: RM15
+Unit Price: RM60
+Balance Quantity: 76
+
+Do you want to search another item information?
+[1] YES [2] NO
+2
+
+Do you want to quit the program?
+[1] YES [2] NO
+1
+
+0 0 0 0 0 0 0 0   0           0        0 0 0       0 0 0       0   0          0      0           0   0 0 0 0 0 0 0   0           0
+      0           0           0       0     0      0    0      0   0      0 0          0       0     0           0   0           0
+      0           0 0 0 0 0 0 0      0 0 0 0 0     0     0     0   0 0 0                 0 0 0       0           0   0           0
+      0           0           0     0         0    0      0    0   0      0 0              0         0           0   0           0
+      0           0           0    0           0   0       0 0 0   0          0            0         0 0 0 0 0 0 0   0 0 0 0 0 0 0
+
+!!!!!!!Thank you for your visit!!!!!!!
